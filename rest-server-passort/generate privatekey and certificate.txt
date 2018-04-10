@@ -1,0 +1,42 @@
+C:\Users\xjiang>set OPENSSL_CONF=c:\OpenSSL-Win64\bin\openssl.cfg
+
+C:\Users\xjiang>set RANDFILE=C:\Users\xjiang\Desktop\Full_Stack\Course5\week4\Ex
+ercise2\rest-server-passort\bin\.rnd
+
+C:\Users\xjiang>cd c:\OpenSSL-Win64
+
+c:\OpenSSL-Win64>cd bin
+
+c:\OpenSSL-Win64\bin>openssl.exe
+
+OpenSSL> genrsa -out ca.key 1024
+Generating RSA private key, 1024 bit long modulus
+...............................++++++
+.....................................++++++
+e is 65537 (0x10001)
+OpenSSL> req -new -x509 -days 1826 -key ca.key -out ca.crt
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:Illinois
+Locality Name (eg, city) []:Chicago
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:ll.co
+Organizational Unit Name (eg, section) []:ll.co
+Common Name (e.g. server FQDN or YOUR name) []:xuhui
+Email Address []:xjiang@gmail.com
+
+OpenSSL> x509 -in ca.crt -out certificate.pem -outform PEM
+OpenSSL>
+
+
+
+
+
+
+
+
